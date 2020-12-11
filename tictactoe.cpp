@@ -1,8 +1,8 @@
 #include<iostream>
 using namespace std;
-string board[3][3]={{"1","2","3"},
-                 {"4","5","6"},
-                 {"7","8","9"}};
+char board[3][3]={{'1','2','3'},
+                 {'4','5','6'},
+                 {'7','8','9'}};
 
 string player1,player2;
 int p1_input,p2_input;
@@ -10,6 +10,8 @@ int row,col;
 void Banner()
 {
 cout<<endl;
+cout<<endl;
+cout<<"============================================================"<<endl;
 cout<<endl;
 cout<<"================    ================    =============="<<endl;  
 cout<<"     ====                 ==            =             "<<endl;
@@ -32,6 +34,8 @@ cout<<"     ====           =              =    =             "<<endl;
 cout<<"     ====            =            =     =             "<<endl;
 cout<<"     ====               ========        =============="<<endl;
 cout<<endl;
+cout<<"============================================================"<<endl;
+cout<<endl;
 cout<<endl;   
 cout<<"======================Welcome to the game==================================="<<endl;
 cout<<endl;
@@ -53,9 +57,9 @@ cout<<endl;
 void plotInput(int input,int player)
 {
 if(player==1)
-board[row][col]="O";
+board[row][col]='O';
 else
-board[row][col]="X";
+board[row][col]='X';
 
 }
 bool checkInput(int input)
@@ -69,7 +73,7 @@ cout<<"Please enter the position again."<<endl;
 return false;
 }
 
-if(board[row][col]=="X" || board[row][col]=="O")
+if(board[row][col]=='X' || board[row][col]=='O')
 {
 cout<<"Already occupied"<<endl;
 return false;
@@ -109,33 +113,60 @@ plotInput(p2_input,2);
 
 bool checkForWinner()
 {
+char marker;
 bool winner;
 string player;
-if(board[0][0]=="X" && board[0][1]=="X" && board[0][2]=="X"  ||  board[0][0]=="X" && board[1][0]=="X" && board[2][0]=="X" || board[0][0]=="X" && board[1][1]=="X" && board[2][2]=="X" ) 
+if(board[0][0]==board[0][1] && board[0][2]==board[0][1] )
 {
-player=player2;
 winner=true;
+marker=board[0][0];
 }
-else if(board[2][0]=="X" && board[2][1]=="X" && board[2][2]=="X"  ||  board[0][2]=="X" && board[1][2]=="X" && board[2][2]=="X" || board[2][0]=="X" && board[1][1]=="X" && board[0][2]=="X" || board[0][1]=="X" && board[1][1]=="X" && board[2][1]=="X" || board[1][0]=="X" && board[1][1]=="X" && board[1][2]=="X") 
+else if(board[0][0]==board[1][0] && board[1][0]==board[2][0])  
 {
-player=player2;
 winner=true;
+marker=board[0][0];
 }
-else if(board[0][0]=="O" && board[0][1]=="O" && board[0][2]=="O"  ||  board[0][0]=="O" && board[1][0]=="O" && board[2][0]=="O" || board[0][0]=="O" && board[1][1]=="O" && board[2][2]=="O" ) 
+else if(board[0][0]==board[1][1] && board[1][1]==board[2][2] )
 {
-player=player1;
 winner=true;
+marker=board[0][0];
 }
-else if(board[2][0]=="O" && board[2][1]=="O" && board[2][2]=="O"  ||  board[0][2]=="O" && board[1][2]=="O" && board[2][2]=="O" || board[2][0]=="O" && board[1][1]=="O" && board[0][2]=="O" || board[0][1]=="O" && board[1][1]=="O" && board[2][1]=="O" || board[1][0]=="O" && board[1][1]=="O" && board[1][2]=="O"  ) 
+else if(board[2][0]==board[2][1] && board[2][2]==board[2][1])   
 {
-player=player1;
 winner=true;
+marker=board[2][0];
+}
+else if( board[0][2]==board[1][2] && board[2][2]==board[1][2])
+{
+winner=true;
+marker=board[0][2];
+}
+else if(board[2][0]==board[1][1] && board[0][2]==board[1][1])
+{
+winner=true;
+marker=board[2][0];
+}  
+else if(board[0][1]==board[1][1] && board[2][1]==board[1][1])
+{
+winner=true;
+marker=board[0][1];
+}
+else if(board[1][0]==board[1][1]  && board[1][2]==board[1][1])
+{
+winner=true;
+marker=board[1][0];
 }
 else
 {
 winner=false;
 }
 if(winner)
+{
+if(marker=='O')
+player=player1;
+else
+player=player2;
+}
 cout<<player<<" has won the game."<<endl;
 return(winner);
 }
