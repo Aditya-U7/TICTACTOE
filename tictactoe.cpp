@@ -86,7 +86,7 @@ bool valid_Input=false;
 if(c%2!=0)
 {
 cout<<endl;
-cout<<player1<<",enter the position of your marker(O):"<<endl;
+cout<<player1<<" ,enter the position of your marker(O):"<<endl;
 while(1)
 {
 cin>>p1_input;
