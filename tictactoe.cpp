@@ -185,11 +185,11 @@ int main()
 	int count=1;
 	bool winnerFound=false;
 	Banner();
-	cout<<"Player1 (O) ,please enter your name"<<endl;
+	cout<<"Player1 (O), please enter your name"<<endl;
 	cout<<endl;
 	cin>>player1;
 	cout<<endl;
-	cout<<"Player2 (X) ,please enter your name"<<endl;
+	cout<<"Player2 (X), please enter your name"<<endl;
 	cout<<endl;
 	cin>>player2;
 	cout<<endl;
