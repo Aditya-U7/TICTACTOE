@@ -12,23 +12,23 @@ TIC-TAC-TOE using command line interface. It is a simple implementation of famou
 
 On initialisation of the game, a board of 3 * 3 matrix will appear. Each cell of the matrix will represent a position starting with 1 at the leftmost top corner.
 
-![Screenshot](userInterface1.png)
+![Screenshot](Interface1.png)
 
 After that, users will be prompted to provide their names. Each player will be asked to give the positions for their marker. Player 1 will have marker O, and Player 2 will have X.
 
-![Screenshot](userInterface2.png)
+![Screenshot](Interface2.png)
 
 If a player provides a position other than 1 to 9, the player will be prompted to re-enter the position along with appropriate message. If a player enters a position which is already taken by a marker, then player will be asked to enter the position again.
 
-![Screenshot](userInterface3.png)
+![Screenshot](Interface3.png)
 
 The player to get three markers positioned in a straight line is declared the winner.
 
-![Screenshot](userInterface4.png)
+![Screenshot](Interface4.png)
 
 If no player is able to get three markers in a straight line, then the game has drawn.
 
-![Screenshot](userInterface5.png)
+![Screenshot](Interface5.png)
 
 
 ## Command:
