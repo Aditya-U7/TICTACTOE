@@ -173,7 +173,7 @@ bool checkForWinner()
 	}
 	if (winner)
 	{
-		if(marker=='O')
+		if (marker=='O')
 			player=player1;
 		else
 			player=player2;
