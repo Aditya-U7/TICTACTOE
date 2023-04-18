@@ -1,6 +1,6 @@
 # TICTACTOE
 
-# Description
+# Description:
 
 TIC-TAC-TOE using command line interface. It is a simple implementation of famous TIC TAC TOE game. Each player can provide their name. The players will be asked to provide marker position on the board. The first player to get three subsequent markers in a row, column or diagonal wins the game.
 
